@@ -6,11 +6,12 @@
 Summary:	PHP module for communicating with Icecast servers
 Name:		php-%{modname}
 Version:	0.9.2
-Release:	%mkrel 5
+Release:	%mkrel 6
 Group:		Development/PHP
 License:	LGPL
 URL:		http://phpshout.sourceforge.net/
 Source0:	http://prdownloads.sourceforge.net/phpshout/phpShout-%{version}.tar.bz2
+Patch0:		phpShout-nuke_hardcoded_cflags.diff
 BuildRequires:	php-devel >= 3:5.2.0
 BuildRequires:	libshout-devel >= 2.2
 BuildRequires:	file
@@ -28,6 +29,7 @@ gets to the Icecast server.
 %prep
 
 %setup -q -n phpShout-%{version}
+%patch0 -p0
 
 # fix permissions
 find . -type f | xargs chmod 644
@@ -37,15 +39,7 @@ find . -type f|xargs file|grep 'CRLF'|cut -d: -f1|xargs perl -p -i -e 's/\r//'
 find . -type f|xargs file|grep 'text'|cut -d: -f1|xargs perl -p -i -e 's/\r//'
 
 %build
-export CFLAGS="%{optflags}"
-export CXXFLAGS="%{optflags}"
-export FFLAGS="%{optflags}"
-
-%if %mdkversion >= 200710
-export CFLAGS="$CFLAGS -fstack-protector"
-export CXXFLAGS="$CXXFLAGS -fstack-protector"
-export FFLAGS="$FFLAGS -fstack-protector"
-%endif
+%serverbuild
 
 phpize
 %configure2_5x --with-libdir=%{_lib} \
