@@ -6,7 +6,7 @@
 Summary:	PHP module for communicating with Icecast servers
 Name:		php-%{modname}
 Version:	0.9.2
-Release:	%mkrel 7
+Release:	%mkrel 8
 Group:		Development/PHP
 License:	LGPL
 URL:		http://phpshout.sourceforge.net/
@@ -72,6 +72,18 @@ shout.default_password = hackme
 shout.default_format   = SHOUT_FORMAT_OGG
 shout.default_protocol = SHOUT_PROTOCOL_HTTP
 EOF
+
+%post
+if [ -f /var/lock/subsys/httpd ]; then
+    %{_initrddir}/httpd restart >/dev/null || :
+fi
+
+%postun
+if [ "$1" = "0" ]; then
+    if [ -f /var/lock/subsys/httpd ]; then
+	%{_initrddir}/httpd restart >/dev/null || :
+    fi
+fi
 
 %clean
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
