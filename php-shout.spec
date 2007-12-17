@@ -15,7 +15,6 @@ Patch0:		phpShout-nuke_hardcoded_cflags.diff
 BuildRequires:	php-devel >= 3:5.2.0
 BuildRequires:	libshout-devel >= 2.2
 BuildRequires:	file
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 phpShout is a PHP5 Extension that wraps around the libshout library available
