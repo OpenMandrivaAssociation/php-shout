@@ -6,7 +6,7 @@
 Summary:	PHP module for communicating with Icecast servers
 Name:		php-%{modname}
 Version:	0.9.2
-Release:	%mkrel 9
+Release:	%mkrel 10
 Group:		Development/PHP
 License:	LGPL
 URL:		http://phpshout.sourceforge.net/
@@ -15,7 +15,7 @@ Patch0:		phpShout-nuke_hardcoded_cflags.diff
 BuildRequires:	php-devel >= 3:5.2.0
 BuildRequires:	libshout-devel >= 2.2
 BuildRequires:	file
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 phpShout is a PHP5 Extension that wraps around the libshout library available
