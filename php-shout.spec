@@ -6,7 +6,7 @@
 Summary:	PHP module for communicating with Icecast servers
 Name:		php-%{modname}
 Version:	0.9.2
-Release:	%mkrel 23
+Release:	%mkrel 24
 Group:		Development/PHP
 License:	LGPL
 URL:		http://phpshout.sourceforge.net/
