@@ -1,0 +1,11 @@
+--- config.m4	2006-10-30 05:49:12.000000000 +0100
++++ config.m4.oden	2007-07-10 18:16:24.000000000 +0200
+@@ -92,7 +92,7 @@
+ 
+ 	PHP_ADD_INCLUDE($SHOUT_INC_DIR)
+ 
+-	SHOUT_CFLAGS="$SHOUT_CFLAGS -Wall -fstack-protector"
++	SHOUT_CFLAGS="$SHOUT_CFLAGS"
+ 	if test "$PHP_SHOUT_DEBUG" == "yes"; then
+ 		SHOUT_CFLAGS="$SHOUT_CFLAGS -DSHOUT_DEBUG"
+ 	fi
