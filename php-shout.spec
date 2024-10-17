@@ -9,7 +9,7 @@ Version:	0.9.2
 Release:	31
 Group:		Development/PHP
 License:	LGPL
-URL:		http://phpshout.sourceforge.net/
+URL:		https://phpshout.sourceforge.net/
 Source0:	http://prdownloads.sourceforge.net/phpshout/phpShout-%{version}.tar.bz2
 Patch0:		phpShout-nuke_hardcoded_cflags.diff
 BuildRequires:	php-devel >= 3:5.2.0
