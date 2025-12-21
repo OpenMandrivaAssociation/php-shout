@@ -12,6 +12,11 @@ License:	LGPL
 URL:		https://phpshout.sourceforge.net/
 Source0:	http://prdownloads.sourceforge.net/phpshout/phpShout-%{version}.tar.bz2
 Patch0:		phpShout-nuke_hardcoded_cflags.diff
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	php-devel >= 3:5.2.0
 BuildRequires:	libshout-devel >= 2.2
 BuildRequires:	file
